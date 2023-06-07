@@ -1,0 +1,21 @@
+<div class="card">
+<header class="card-header">
+<a href="#" data-toggle="collapse" data-target="#illness-body"
+aria-expanded="true">
+<i class="icon-action fa fa-chevron-down"></i>
+</a>
+<span class="title"><b>History of Past Illness</b></span>
+</header>
+<div class="card-body collapse show" id="illness-body">
+<ul class="list-group">
+{{each(options.illness)}}
+<li class="list-group-item">
+{{if(options.illness[@index].onsetDateTime)}}
+{{@this.onsetDateTime}}
+{{/if}}
+<!--- You probably want more than just date -->
+</li>
+{{/each}}
+</ul>
+</div>
+</div>
