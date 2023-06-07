@@ -210,6 +210,15 @@ const update = function (ips) {
           alertMissingComposition = true;
           console.log('Section is missing coding information');
         }
+else if (section.code.coding[0].code == "11348-0") {
+console.log('History of Past Illness Section', j);
+section.illness = [];
+section.entry.forEach(function (illness) {
+console.log(illness.reference);
+section.illness.push(getEntry(ips, illness.reference));
+});
+render("IllnessHistory", section, "IllnessHistory", j);
+}
         else if (section.code.coding[0].code == "11450-4") {
           console.log('Problems Section', j);
           section.problems = [];
